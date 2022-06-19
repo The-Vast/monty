@@ -1,13 +1,13 @@
 #include "monty.h"
 
 /**
- * do_add - function that adds the first two elements of the stack
+ * add_func - function that adds the first two elements of the stack
  * @stack: pointer to the top of the stack
  * @line_number: error line number
  *
  * Return: void
  */
-void do_add(stack_t **stack, unsigned int line_number)
+void add_func(stack_t **stack, unsigned int line_number)
 {
 	int a, b, sum;
 
