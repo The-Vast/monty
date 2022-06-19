@@ -53,7 +53,7 @@ void pop(stack_t **stack, unsigned int line_number);
 void pint(stack_t **stack, unsigned int line_number);
 void add_func(stack_t **stack, unsigned int line_number);
 void parse(char *fileName, stack_t **head);
-void nop(stack_t **stack, unsigned int line_number);
+void no_op(stack_t **stack, unsigned int line_number);
 void sub_func(stack_t **stack, unsigned int line_number);
 void div_func(stack_t **stack, unsigned int line_number);
 void mul_func(stack_t **stack, unsigned int line_number);
