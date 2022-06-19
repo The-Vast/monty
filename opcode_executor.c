@@ -12,21 +12,21 @@ void exe_operation(char *op_command, stack_t **head, unsigned int line_number)
 {
 	int i;
 	instruction_t all_ops[] = {
-		{"push", do_push},
-		{"pall", do_pall},
-		{"pint", do_pint},
-		{"pop", do_pop},
-		{"add", do_add},
-		{"sub", do_sub},
-		{"mul", do_mul},
+		{"push", push},
+		{"pall", pall},
+		{"pint", pint},
+		{"pop", pop},
+		{"swap", swap},
+		{"add", add},
+		{"nop", nop},
+		{"sub", sub},
 		{"div", do_div},
-		{"mod", do_mod},
-		{"swap", do_swap},
-		{"nop", do_nop},
-		{"pchar", do_pchar},
-		{"rotl", do_rotl},
-		{"rotr", do_rotr},
-		{"pstr", do_pstr},
+		{"mul", _mul},
+		{"mod", _mod},
+		{"pchar", _pchar},
+		{"rotl", _rotl},
+		{"rotr", _rotr},
+		{"pstr", _pstr},
 		{NULL, NULL}
 	};
 
@@ -41,7 +41,7 @@ void exe_operation(char *op_command, stack_t **head, unsigned int line_number)
 
 	if (op_command[0] != '#' && strlen(op_command) != 0)
 	{
-		dprintf(STDERR_FILENO, "L%u: unknown instruction %s\n", line_number,
+		fprintf(stderr, "L%u: unknown instruction %s\n", line_number,
 		op_command);
 		free_fp_line();
 		exit(EXIT_FAILURE);

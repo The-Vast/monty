@@ -9,25 +9,27 @@
  */
 void parse(char *fileName, stack_t **head UNUSED)
 {
+
 	FILE *fp;
 	char *line = NULL, *op;
 	size_t len = 0;
 	unsigned int lineNum = 1;
 
+
 	fp = fopen(fileName, "r");
 	if (fp == NULL)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't open file %s\n", fileName);
+		fprintf(stderr, "Error: Can't open file %s\n", fileName);
 		exit(EXIT_FAILURE);
 	}
 
-	GLOBAL_var.fp = fp;
+	glob_var.fp = fp;
 
 	atexit(free_dataStructure);
 
 	while (getline(&line, &len, fp) != -1)
 	{
-		GLOBAL_var.line = line;
+		glob_var.line = line;
 		op = strtok(line, DELIMS);
 		if (op != NULL)
 			exe_operation(op, head, lineNum);

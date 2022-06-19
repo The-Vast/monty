@@ -1,19 +1,19 @@
 #include "monty.h"
 
 /**
- * do_pchar - function that prints the char at the top of the stack
+ * _pchar - function that prints the char at the top of the stack
  * @stack: pointer to the top of the stack
  * @line_number: error line number
  *
  * Return: void
  */
-void do_pchar(stack_t **stack, unsigned int line_number)
+void _pchar(stack_t **stack, unsigned int line_number)
 {
 	int num;
 
 	if (stack == NULL || *stack == NULL)
 	{
-		dprintf(STDERR_FILENO, "L%u: can't pchar, stack empty\n",
+		fprintf(stderr, "L%u: can't pchar, stack empty\n",
 			line_number);
 		exit(EXIT_FAILURE);
 	}
@@ -21,7 +21,7 @@ void do_pchar(stack_t **stack, unsigned int line_number)
 	num = (*stack)->n;
 	if (!(num >= 0 && num <= 127))
 	{
-		dprintf(STDERR_FILENO, "L%u: can't pchar, value out of range\n",
+		fprintf(stderr, "L%u: can't pchar, value out of range\n",
 			line_number);
 		exit(EXIT_FAILURE);
 	}
@@ -31,7 +31,7 @@ void do_pchar(stack_t **stack, unsigned int line_number)
 
 
 /**
- * do_rotl - function that rotates the stack to the top, the top element of the
+ * _rotl - function that rotates the stack to the top, the top element of the
  * stack becomes the last one, and the second top element of the stack becomes
  * the first one
  * @stack: pointer to the stack
@@ -39,13 +39,13 @@ void do_pchar(stack_t **stack, unsigned int line_number)
  *
  * Return: void
  */
-void do_rotl(stack_t **stack, unsigned int line_number)
+void _rotl(stack_t **stack, unsigned int line_number)
 {
 	stack_t *head, *tail;
 
 	if (*stack == NULL || (*stack)->next == NULL)
 	{
-		do_nop(stack, line_number);
+		nop(stack, line_number);
 		return;
 	}
 
@@ -65,7 +65,7 @@ void do_rotl(stack_t **stack, unsigned int line_number)
 
 
 /**
- * do_rotr - function that rotates the stack to the top, the top element of the
+ * _rotr - function that rotates the stack to the top, the top element of the
  * stack becomes the last one, and the second top element of the stack becomes
  * the first one
  * @stack: pointer to the stack
@@ -73,13 +73,13 @@ void do_rotl(stack_t **stack, unsigned int line_number)
  *
  * Return: void
  */
-void do_rotr(stack_t **stack, unsigned int line_number)
+void _rotr(stack_t **stack, unsigned int line_number)
 {
 	stack_t *head, *tail;
 
 	if (*stack == NULL || (*stack)->next == NULL)
 	{
-		do_nop(stack, line_number);
+		nop(stack, line_number);
 		return;
 	}
 
@@ -99,13 +99,13 @@ void do_rotr(stack_t **stack, unsigned int line_number)
 
 
 /**
- * do_pstr - prints the string starting at the top of the stack
+ * _pstr - prints the string starting at the top of the stack
  * @stack: pointer to the stack
  * @UNUSED: line number
  *
  * Return: void
  */
-void do_pstr(stack_t **stack, unsigned int line_number UNUSED)
+void _pstr(stack_t **stack, unsigned int line_number UNUSED)
 {
 	stack_t *h;
 	int num;
