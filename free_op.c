@@ -9,7 +9,7 @@ void free_dataStructure(void)
 {
 	stack_t *tmp1, *tmp2 = NULL;
 
-	tmp1 = *(glob_var.top);
+	tmp1 = *(glob_variable.top);
 
 	while (tmp1 != NULL)
 	{
@@ -27,8 +27,8 @@ void free_dataStructure(void)
  */
 void free_fp_line(void)
 {
-	fclose(glob_var.fp);
+	fclose(glob_variable.fp);
 
-	if (glob_var.line)
-		free(glob_var.line);
+	if (glob_variable.line)
+		free(glob_variable.line);
 }

@@ -13,7 +13,7 @@ int main(int argc, char **argv)
 	stack_t *head;
 
 	head = NULL;
-	glob_var.top = &head;
+	glob_variable.top = &head;
 
 	if (argc != 2)
 	{

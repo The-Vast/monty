@@ -23,13 +23,13 @@ void parse(char *fileName, stack_t **head UNUSED)
 		exit(EXIT_FAILURE);
 	}
 
-	glob_var.fp = fp;
+	glob_variable.fp = fp;
 
 	atexit(free_dataStructure);
 
 	while (getline(&line, &len, fp) != -1)
 	{
-		glob_var.line = line;
+		glob_variable.line = line;
 		op = strtok(line, DELIMS);
 		if (op != NULL)
 			exe_operation(op, head, lineNum);
