@@ -1,6 +1,6 @@
 #include "monty.h"
-
 global_vars_t glob_variable;
+
 /**
  * main - man function
  * @argc: argument count
