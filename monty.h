@@ -45,18 +45,19 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+/* Action Functions */
 void push(stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line);
 void swap(stack_t **stack, unsigned int line_number);
 void pop(stack_t **stack, unsigned int line_number);
 void pint(stack_t **stack, unsigned int line_number);
-void add(stack_t **stack, unsigned int line_number);
+void add_func(stack_t **stack, unsigned int line_number);
 void parse(char *fileName, stack_t **head);
 void nop(stack_t **stack, unsigned int line_number);
-void sub(stack_t **stack, unsigned int line_number);
-void do_div(stack_t **stack, unsigned int line_number);
-void _mul(stack_t **stack, unsigned int line_number);
-void _mod(stack_t **stack, unsigned int line_number);
+void sub_func(stack_t **stack, unsigned int line_number);
+void div_func(stack_t **stack, unsigned int line_number);
+void mul_func(stack_t **stack, unsigned int line_number);
+void mod_func(stack_t **stack, unsigned int line_number);
 void dropnl(char *src);
 void _pstr(stack_t **stack, unsigned int line_number);
 void _rotr(stack_t **stack, unsigned int line_number);
