@@ -72,7 +72,7 @@ void div_func(stack_t **stack, unsigned int line_number)
 	}
 	a = (*stack)->n;
 	b = (*stack)->next->n;
-	
+
 	if (a == 0)
 	{
 		fprintf(stderr, "L%u: division by zero\n",
