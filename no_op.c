@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * no_nop - opcode that does nothing
+ * no_op - opcode that does nothing
  * @stack: pointer to stack
  * @line_number: line number
  *

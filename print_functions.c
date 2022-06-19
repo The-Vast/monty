@@ -45,7 +45,7 @@ void _rotl(stack_t **stack, unsigned int line_number)
 
 	if (*stack == NULL || (*stack)->next == NULL)
 	{
-		nop(stack, line_number);
+		no_op(stack, line_number);
 		return;
 	}
 
@@ -79,7 +79,7 @@ void _rotr(stack_t **stack, unsigned int line_number)
 
 	if (*stack == NULL || (*stack)->next == NULL)
 	{
-		nop(stack, line_number);
+		no_op(stack, line_number);
 		return;
 	}
 

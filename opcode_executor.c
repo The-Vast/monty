@@ -18,7 +18,7 @@ void exe_operation(char *op_command, stack_t **head, unsigned int line_number)
 		{"pop", pop},
 		{"swap", swap},
 		{"add", add_func},
-		{"nop", nop},
+		{"nop", no_op},
 		{"sub", sub_func},
 		{"div", div_func},
 		{"mul", mul_func},
